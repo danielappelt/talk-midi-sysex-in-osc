@@ -1,2 +1,2 @@
 # talk-midi-sysex-in-osc
-Slides for a talk about the MIDI SysEx implementation in Open Stage Control
+[Slides](https://danielappelt.github.io/talk-midi-sysex-in-osc/) for a talk about the MIDI SysEx implementation in Open Stage Control
