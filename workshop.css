@@ -1,0 +1,11 @@
+[data-background-image] h2 {
+    /* color: white; */
+   /* -webkit-text-fill-color: white; */
+   -webkit-text-stroke-width: 0.1rem;
+   -webkit-text-stroke-color: black;
+}
+
+[data-background-image] .paragraph, [data-background-image] .ulist {
+    border-radius: 0.1em;
+    background: rgba(0, 0, 0, 0.33);
+}

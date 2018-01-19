@@ -1,0 +1,71 @@
+= MIDI SysEx in+++<br />+++Open Stage Control
+:customcss: workshop.css
+:linkattrs:
+
+Open Source Audio Meeting Cologne
+
+link:https://github.com/danielappelt[Daniel Appelt, window="_blank"] / 2018-01-17
+
+
+== link:http://osc.ammd.net/[Open Stage Control]
+image::http://osc.ammd.net/img/ardour-osc.png[background, size=cover]
+
+[.step]
+* a libre desktop OSC bi-directional control surface application
+* built on web technologies
+* run as Electron web server that accepts any number of clients
+
+
+=== link:https://en.wikipedia.org/wiki/Open_Sound_Control[Open Sound Control]
+
+[.step]
+* a protocol for networking sound synthesizers, computers, and other multimedia devices
+* for purposes such as musical performance or show control
+* Ardour OSC example:
++
+----
+/transport_play
+----
+
+
+== link:https://en.wikipedia.org/wiki/MIDI#System_Exclusive_messages[MIDI System Exclusive Messages]
+
+[.step]
+* allows machine-dependent messages over MIDI
+* more control than standard MIDI but low-level
+* SysEx example:
++
+----
+F0 7E 7F 06 01 F7
+----
+
+
+== Why use OSC for SysEx?
+
+[.step]
+* free SysEx editors are rare
+[.step]
+** link:http://ctrlr.org/[Ctrlr], link:https://sourceforge.net/projects/jsynthlib/[JSynthlib], …​
+** none of them seemed easily hackable
+* Open Stage Control already had simple link:http://osc.ammd.net/extras/midi/[MIDI support] and…​
+[.step]
+** JavaScript, Python, and a clean code base!
+
+
+== Challenges
+
+[.step]
+* How to encode SysEx in OSC messages?
++
+----
+/sysex  "F0 7E 7F nn nn F7"  "06"  "01"
+----
+* SysEx often needs checksum calculation
+[.step]
+** link:http://osc.ammd.net/extras/custom-module/[custom modules] allow run-time modifications
+
+
+== Demo Time
+
+
+== The End
